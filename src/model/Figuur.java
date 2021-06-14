@@ -41,6 +41,12 @@ public class Figuur {
         }
     }
 
+    @Override
+    public String toString() {
+        return String.format("Kleur: %s\nOmtrek: %.2f\nOppervlakte: %.2f",
+                this.kleur, geefOmtrek(), geefOppervlakte());
+    }
+
     public String getKleur() {
         return kleur;
     }

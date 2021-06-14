@@ -22,8 +22,7 @@ public class MeetkundeLauncher {
         mijnCirkelArray[2] = new Cirkel(6);
 
         for (int cirkel = 0; cirkel < mijnCirkelArray.length; cirkel++) {
-            System.out.println(mijnCirkelArray[cirkel].geefOmtrek());
-            System.out.println(mijnCirkelArray[cirkel].geefOppervlakte());
+            System.out.println(mijnCirkelArray[cirkel]);
             System.out.println(mijnCirkelArray[cirkel].vertelOverGrootte());;
         }
 
@@ -36,10 +35,7 @@ public class MeetkundeLauncher {
         mijnRechthoekArray[2] = new Rechthoek(25, 10);
 
         for (Rechthoek rechthoek : mijnRechthoekArray) {
-            System.out.println(rechthoek.geefOmtrek());
-            System.out.println(rechthoek.geefOppervlakte());
-            System.out.println(rechthoek.getHoekpuntLinksBoven().getxCoordinaat());
-            System.out.println(rechthoek.getHoekpuntLinksBoven().getyCoordinaat());
+            System.out.println(rechthoek);
             System.out.println(rechthoek.vertelOverGrootte());
         }
     }

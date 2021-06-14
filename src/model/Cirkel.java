@@ -40,6 +40,12 @@ public class Cirkel extends Figuur {
         return "Een cirkel is een verzameling punten, die allemaal dezelfde afstand tot een middelpunt hebben.";
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s\nStraal: %.2f\nMiddelpunt: %s",
+                super.toString(), this.straal, this.middelpunt);
+    }
+
     public void setStraal(double straal) {
         if (straal <= 0) {
             System.out.println("De straal moet positief zijn. De straal wordt nu op 1 gezet.");
