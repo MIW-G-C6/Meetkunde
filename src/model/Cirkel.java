@@ -9,24 +9,20 @@ public class Cirkel {
     private static final double GRENSWAARDE_GROOT_FIGUUR = 100.0;
 
     private static final double DEFAULT_STRAAL = 1.0;
-    private static final double DEFAULT_MIDDELPUNT_X = 0.0;
-    private static final double DEFAULT_MIDDELPUNT_Y = 0.0;
     private static final String DEFAULT_KLEUR = "rood";
 
     private double straal;
-    private double middelpuntX;
-    private double middelpuntY;
+    private Punt middelpunt;
     private String kleur;
 
-    public Cirkel(double straal, double middelpuntX, double middelpuntY, String kleur) {
+    public Cirkel(double straal, Punt middelpunt, String kleur) {
         this.setStraal(straal);
-        this.middelpuntX = middelpuntX;
-        this.middelpuntY = middelpuntY;
+        this.middelpunt = middelpunt;
         this.setKleur(kleur);
     }
 
     public Cirkel(double straal) {
-        this(straal, DEFAULT_MIDDELPUNT_X, DEFAULT_MIDDELPUNT_Y, DEFAULT_KLEUR);
+        this(straal, new Punt(), DEFAULT_KLEUR);
     }
 
 
