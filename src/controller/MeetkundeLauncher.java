@@ -1,7 +1,7 @@
 package controller;
 
-import model.Cirkel;
 import model.Punt;
+import model.Rechthoek;
 
 /**
  * @author Vincent Velthuizen <v.r.velthuizen@pl.hanze.nl>
@@ -11,25 +11,21 @@ import model.Punt;
 public class MeetkundeLauncher {
 
     public static void main(String[] args) {
-        System.out.println(Cirkel.geefDefinitie());
+        System.out.println(Rechthoek.geefDefinitie());
 
-        Cirkel[] mijnCirkelArray = new Cirkel[3];
-        mijnCirkelArray[0] = new Cirkel(3, new Punt(1, 4), "groen");
-        mijnCirkelArray[1] = new Cirkel();
-        mijnCirkelArray[2] = new Cirkel(6);
+        Rechthoek[] mijnRechthoekArray = new Rechthoek[3];
 
-        for (int cirkel = 0; cirkel < mijnCirkelArray.length; cirkel++) {
-            System.out.println(mijnCirkelArray[cirkel].geefOmtrek());
-            System.out.println(mijnCirkelArray[cirkel].geefOppervlakte());
-            System.out.println(mijnCirkelArray[cirkel].vertelOverGrootte());
+        mijnRechthoekArray[0] = new Rechthoek(4, 3, new Punt(2,5), "Blauw");
+        mijnRechthoekArray[1] = new Rechthoek();
+        mijnRechthoekArray[2] = new Rechthoek(25, 10);
+
+        for (Rechthoek rechthoek : mijnRechthoekArray) {
+            System.out.println(rechthoek.geefOmtrek());
+            System.out.println(rechthoek.geefOppervlakte());
+            System.out.println(rechthoek.getHoekpuntLinksBoven().getxCoordinaat());
+            System.out.println(rechthoek.getHoekpuntLinksBoven().getyCoordinaat());
+            System.out.println(rechthoek.vertelOverGrootte());
         }
-
-        for (Cirkel cirkel : mijnCirkelArray) {
-            System.out.println(cirkel.geefOmtrek());
-            System.out.println(cirkel.geefOppervlakte());
-            System.out.println(cirkel.vertelOverGrootte());
-        }
-
     }
 
 }

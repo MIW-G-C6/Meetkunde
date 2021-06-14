@@ -20,4 +20,12 @@ public class Punt {
     public Punt() {
         this(DEFAULT_X_COORDINAAT, DEFAULT_Y_COORDINAAT);
     }
+
+    public double getxCoordinaat() {
+        return xCoordinaat;
+    }
+
+    public double getyCoordinaat() {
+        return yCoordinaat;
+    }
 }
