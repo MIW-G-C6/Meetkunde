@@ -10,6 +10,8 @@ import model.Cirkel;
 public class MeetkundeLauncher {
 
     public static void main(String[] args) {
+        System.out.println(Cirkel.geefDefinitie());
+
         Cirkel[] mijnCirkelArray = new Cirkel[3];
         mijnCirkelArray[0] = new Cirkel(3, 1, 4, "groen");
         mijnCirkelArray[1] = new Cirkel();
