@@ -5,20 +5,16 @@ package model;
  *
  * Slaat de eigenschappen op van een cirkel
  */
-public class Cirkel {
-    private static final double GRENSWAARDE_GROOT_FIGUUR = 100.0;
-
+public class Cirkel extends Figuur {
     private static final double DEFAULT_STRAAL = 1.0;
-    private static final String DEFAULT_KLEUR = "rood";
 
     private double straal;
     private Punt middelpunt;
-    private String kleur;
 
     public Cirkel(double straal, Punt middelpunt, String kleur) {
+        super(kleur);
         this.setStraal(straal);
         this.middelpunt = middelpunt;
-        this.setKleur(kleur);
     }
 
     public Cirkel(double straal) {
@@ -30,20 +26,14 @@ public class Cirkel {
         this(DEFAULT_STRAAL);
     }
 
+    @Override
     public double geefOmtrek() {
         return 2 * Math.PI * straal;
     }
 
+    @Override
     public double geefOppervlakte() {
         return Math.PI * straal * straal;
-    }
-
-    public String vertelOverGrootte() {
-        if (geefOppervlakte() > GRENSWAARDE_GROOT_FIGUUR) {
-            return "Ik ben groot!!!";
-        } else {
-            return "Ik ben klein!!!";
-        }
     }
 
     public static String geefDefinitie() {
@@ -58,10 +48,5 @@ public class Cirkel {
             this.straal = straal;
         }
     }
-
-    public void setKleur(String kleur) {
-        this.kleur = kleur;
-    }
-
 
 }
