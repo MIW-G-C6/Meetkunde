@@ -5,6 +5,9 @@ import model.Figuur;
 import model.Punt;
 import model.Rechthoek;
 
+import javax.security.sasl.SaslClient;
+import java.util.Scanner;
+
 /**
  * @author Vincent Velthuizen <v.r.velthuizen@pl.hanze.nl>
  *
