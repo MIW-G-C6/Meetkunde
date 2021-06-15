@@ -54,4 +54,7 @@ public class Cirkel extends Figuur {
         }
     }
 
+    public double getStraal() {
+        return straal;
+    }
 }
