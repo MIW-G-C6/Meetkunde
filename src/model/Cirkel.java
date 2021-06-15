@@ -21,7 +21,6 @@ public class Cirkel extends Figuur {
         this(straal, new Punt(), DEFAULT_KLEUR);
     }
 
-
     public Cirkel() {
         this(DEFAULT_STRAAL);
     }

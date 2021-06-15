@@ -28,6 +28,7 @@ public class MeetkundeLauncher {
 
     public static void toonInformatie(Figuur figuur) {
         System.out.println(figuur);
+        System.out.println(figuur.vertelOverGrootte());
         System.out.println();
     }
 
