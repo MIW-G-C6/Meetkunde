@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * @author Vincent Velthuizen <v.r.velthuizen@pl.hanze.nl>
@@ -62,6 +63,7 @@ public class Oppervlak {
     public String toString() {
         String eenReturn = "";
 
+        Collections.sort(mijnFiguren);
         for (Figuur figuur : mijnFiguren) {
             eenReturn += figuur.toString() + "\n\n";
         }
