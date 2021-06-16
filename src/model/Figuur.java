@@ -5,7 +5,7 @@ package model;
  *
  * Algemene eigenschappen die alle figuren moeten hebben
  */
-public abstract class Figuur implements Comparable<Figuur> {
+public abstract class Figuur implements Comparable<Figuur>, ToelaatbaarInOppervlak {
     protected static final double GRENSWAARDE_GROOT_FIGUUR = 100.0;
 
     // Term DEFAULT WAARDE uit het klasse diagram voelt onnodig lang en staat niet in het woordenboek

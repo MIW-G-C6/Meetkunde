@@ -20,43 +20,12 @@ public class Oppervlak {
     }
 
     public void voegFiguurToe(Figuur figuur) {
-        if (figuurPastAlsVormInOppervlak(figuur)) {
+        if (figuur.pastInOppervlak(this.lengte, this.breedte)) {
             mijnFiguren.add(figuur);
             System.out.println("Dit figuur is toegevoegd");
         } else {
-            System.out.println("Dit figuur is te groot");
+            System.out.println("Dit figuur past niet.");
         }
-
-    }
-
-    public boolean figuurPastAlsVormInOppervlak(Figuur figuur) {
-        boolean past = false;
-
-        if (figuur instanceof Rechthoek) {
-            if (    ((Rechthoek) figuur).getLengte() <= this.lengte &&
-                    ((Rechthoek) figuur).getBreedte() <= this.breedte ) {
-                past = true;
-            }
-        } else if (figuur instanceof Cirkel) {
-            if (    ((Cirkel) figuur).getStraal() * 2 <= this.breedte &&
-                    ((Cirkel) figuur).getStraal() * 2 <= this.lengte) {
-                past = true;
-            }
-        }
-
-        return past;
-    }
-
-    public ArrayList<Figuur> geefFigurenMetGrotereOppervlakteDan(double grenswaarde) {
-        ArrayList<Figuur> gevraagdeFiguren = new ArrayList<>();
-
-        for (Figuur figuur : mijnFiguren) {
-            if (figuur.geefOppervlakte() > grenswaarde) {
-                gevraagdeFiguren.add(figuur);
-            }
-        }
-
-        return gevraagdeFiguren;
     }
 
     @Override

@@ -40,6 +40,12 @@ public class Cirkel extends Figuur {
     }
 
     @Override
+    public boolean pastInOppervlak(double lengte, double breedte) {
+        return  getStraal() * 2 <= breedte &&
+                getStraal() * 2 <= lengte;
+    }
+
+    @Override
     public String toString() {
         return String.format("%s\nStraal: %.2f\nMiddelpunt: %s",
                 super.toString(), this.straal, this.middelpunt);
