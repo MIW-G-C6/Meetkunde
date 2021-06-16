@@ -30,14 +30,14 @@ public class Oppervlak {
 
     @Override
     public String toString() {
-        String eenReturn = "";
+        StringBuilder eenReturn = new StringBuilder();
 
         Collections.sort(mijnFiguren);
         for (Figuur figuur : mijnFiguren) {
-            eenReturn += figuur.toString() + "\n\n";
+            eenReturn.append(String.format("%s\n\n", figuur.toString()));
         }
 
-        return eenReturn;
+        return eenReturn.toString();
     }
 
     public ArrayList<Figuur> getMijnFiguren() {
