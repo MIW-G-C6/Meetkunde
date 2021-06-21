@@ -7,10 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -52,10 +49,16 @@ public class MeetkundeLauncher {
         }
 
         System.out.println("De verbinding is gemaakt!");
-        String sql = "INSERT INTO punt VALUES (3, 6);";
+        String sql = "SELECT xcoordinaat, ycoordinaat FROM punt;";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.executeUpdate();
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                double xCoordinaat = resultSet.getDouble("xcoordinaat");
+                double yCoordinaat = resultSet.getDouble("ycoordinaat");
+                Punt punt = new Punt(xCoordinaat, yCoordinaat);
+                System.out.println(punt);
+            }
             connection.close();
         } catch (SQLException sqlException) {
             System.out.println(sqlException.getMessage());
