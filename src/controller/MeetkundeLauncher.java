@@ -1,6 +1,8 @@
 package controller;
 
+import database.CirkelDAO;
 import database.DBaccess;
+import database.PuntDAO;
 import model.*;
 
 import java.sql.*;
@@ -20,21 +22,16 @@ public class MeetkundeLauncher {
         DBaccess dBaccess = new DBaccess(databaseName, userName, mainUserPassword);
         dBaccess.openConnection();
 
-        System.out.println("De verbinding is gemaakt!");
-        String sql = "SELECT xcoordinaat, ycoordinaat FROM punt WHERE xcoordinaat = 3;";
-        try {
-            PreparedStatement preparedStatement = dBaccess.getConnection().prepareStatement(sql);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                double xCoordinaat = resultSet.getDouble("xcoordinaat");
-                double yCoordinaat = resultSet.getDouble("ycoordinaat");
-                Punt punt = new Punt(xCoordinaat, yCoordinaat);
-                System.out.println(punt);
-            }
-            dBaccess.closeConnection();
-        } catch (SQLException sqlException) {
-            System.out.println(sqlException.getMessage());
+        PuntDAO puntDAO = new PuntDAO(dBaccess);
+
+        for (Punt punt : puntDAO.getPunten()) {
+            System.out.println(punt);
         }
+
+        CirkelDAO cirkelDao = new CirkelDAO(dBaccess);
+        cirkelDao.slaCirkelOp(new Cirkel(5, new Punt(3, 7), "Oranje"));
+
+        dBaccess.closeConnection();
     }
 
 }
